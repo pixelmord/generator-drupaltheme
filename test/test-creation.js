@@ -23,11 +23,12 @@ describe('drupaltheme generator', function () {
     var expected = [
       // add files you expect to exist here.
       '.jshintrc',
-      '.editorconfig'
+      '.editorconfig',
+      'temp.info'
     ];
 
     helpers.mockPrompt(this.app, {
-      'someOption': 'Y'
+      'themeDesc': 'mock theme decription'
     });
     this.app.options['skip-install'] = true;
     this.app.run({}, function () {

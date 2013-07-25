@@ -1,6 +1,7 @@
 {
-  "name": "package",
+  "name": "<%= _.slugify(themeName) %>",
   "version": "0.0.0",
+  "directory": "js",
   "dependencies": {}
 }
 
