@@ -22,13 +22,59 @@ describe('drupaltheme generator', function () {
   it('creates expected files', function (done) {
     var expected = [
       // add files you expect to exist here.
+      ['bower.json', /"name": "temp"/],
+      ['package.json', /"name": "temp"/],
       '.jshintrc',
       '.editorconfig',
-      'temp.info'
+      'temp.info',
+      'css/editor.css',
+      'css/style.css',
+      'js/temp.js'
     ];
 
     helpers.mockPrompt(this.app, {
-      'themeDesc': 'mock theme decription'
+      'themeDesc': 'mock theme decription',
+      'themeStyles': 'n',
+      'features': []
+    });
+    this.app.options['skip-install'] = true;
+    this.app.run({}, function () {
+      helpers.assertFiles(expected);
+      done();
+    });
+  });
+
+  it('creates expected files for SASS support', function (done) {
+    var expected = [
+      // add files you expect to exist here.
+      'sass/_base.scss',
+      'sass/editor.scss',
+      'sass/style.scss'
+    ];
+
+    helpers.mockPrompt(this.app, {
+      'themeDesc': 'mock theme decription',
+      'themeStyles': 's',
+      'features': []
+    });
+    this.app.options['skip-install'] = true;
+    this.app.run({}, function () {
+      helpers.assertFiles(expected);
+      done();
+    });
+  });
+
+  it('creates expected files for COMPASS support', function (done) {
+    var expected = [
+      // add files you expect to exist here.
+      'Gemfile',
+      'config.rb'
+    ];
+
+    helpers.mockPrompt(this.app, {
+      'themeDesc': 'mock theme decription',
+      'themeStyles': 'c',
+      'features': []
     });
     this.app.options['skip-install'] = true;
     this.app.run({}, function () {

@@ -1,4 +1,0 @@
-name = <%= themeName %>
-description = <%= themeDesc %>
-core = 7.x
-

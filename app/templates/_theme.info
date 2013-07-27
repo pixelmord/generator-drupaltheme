@@ -1,0 +1,20 @@
+name = <%= themeName %>
+description = <%= themeDesc %>
+core = 7.x
+
+;-------------------- C S S -----------------------
+; We include one "editor" stylesheet that contains
+; resets and normalizations as well as styles used
+; by editors such as typography and styles for use
+; in a WYSIWYG editor.
+;
+; All other styles will be placed in the styles
+; file. This will include styles for layout, page
+; elements, features and print overrides.
+
+stylesheets[all][] = css/editor.css
+stylesheets[all][] = css/styles.css
+
+;--------------------- J S ------------------------
+
+scripts[] = <%= themeName %>.js

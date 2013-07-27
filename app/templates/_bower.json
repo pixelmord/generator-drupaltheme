@@ -1,7 +1,10 @@
 {
-  "name": "<%= _.slugify(themeName) %>",
+  "name": "<%= themeName %>",
   "version": "0.0.0",
-  "directory": "js",
-  "dependencies": {}
+  "dependencies": {<% if (compassBootstrap) { %>
+    "sass-bootstrap": "~2.3.0",<% } %><% if (frondly) { %>
+    "frondly": "https://github.com/pixelmord/frondly.git",<% } %><% if (modernizr) { %>
+    "modernizr": "~2.6.2"<% } %>
+  },
+  "devDependencies": {}
 }
-

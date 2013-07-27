@@ -1,0 +1,10 @@
+/*
+// Stylesheet for reset, typography and all elements to be shown or used in wysiwyg
+// ========================================================================== */
+
+<% if (styleCOMPASS || compassBootstrap || frondly) { %>
+/*
+// a SASS/COMPASS file 'editor.scss' is in the sass directory
+// and upon first compilation this file here will be overridden
+*/
+<% } %>
