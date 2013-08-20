@@ -17,4 +17,4 @@ stylesheets[all][] = css/styles.css
 
 ;--------------------- J S ------------------------
 
-scripts[] = <%= themeName %>.js
+scripts[] = js/<%= themeName %>.js
