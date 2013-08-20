@@ -32,11 +32,11 @@ require 'susy'
 # State additional import paths here.
 <% if (frondly) { %>
 # Add import path to frondly sass partials
-add_import_path "bower_components/frondly/sass"
+add_import_path "libraries/frondly/sass"
 <% } %>
 <% if (compassBootstrap) { %>
 # Add sass-bootstrap as import path to use components and mixins from there
-add_import_path "bower_components/sass-bootstrap/lib"
+add_import_path "libraries/sass-bootstrap/lib"
 <% } %>
 ##
 ## You probably don't need to edit anything below this.
