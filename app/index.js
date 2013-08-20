@@ -123,6 +123,11 @@ DrupalthemeGenerator.prototype.themeInfo = function themeInfo() {
   this.template('_theme.info', tn + '.info');
 };
 
+DrupalthemeGenerator.prototype.themeImages = function themeImages() {
+  this.copy('_screenshot.png', 'screenshot.png');
+  this.copy('_logo.png', 'logo.png');
+};
+
 DrupalthemeGenerator.prototype.packageFiles = function packageFiles() {
   this.template('_package.json', 'package.json');
   this.template('_bower.json', 'bower.json');
