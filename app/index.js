@@ -107,7 +107,7 @@ DrupalthemeGenerator.prototype.themeStyles = function themeStyles() {
     this.template('_Gemfile', 'Gemfile');
   }
   if (this.styleSASS || this.styleCOMPASS || this.compassBootstrap || this.frondly) {
-    this.template('__base.scss', 'sass/_base.scss');
+    this.template('__config.scss', 'sass/_config.scss');
     this.template('_editor.scss', 'sass/editor.scss');
     this.template('_style.scss', 'sass/style.scss');
   }
@@ -126,6 +126,7 @@ DrupalthemeGenerator.prototype.themeInfo = function themeInfo() {
 DrupalthemeGenerator.prototype.packageFiles = function packageFiles() {
   this.template('_package.json', 'package.json');
   this.template('_bower.json', 'bower.json');
+  this.copy('bowerrc', '.bowerrc');
 };
 
 DrupalthemeGenerator.prototype.projectFiles = function projectFiles() {
