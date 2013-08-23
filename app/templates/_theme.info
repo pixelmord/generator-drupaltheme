@@ -13,7 +13,7 @@ core = 7.x
 ; elements, features and print overrides.
 
 stylesheets[all][] = css/editor.css
-stylesheets[all][] = css/styles.css
+stylesheets[all][] = css/style.css
 
 ;--------------------- J S ------------------------
 
