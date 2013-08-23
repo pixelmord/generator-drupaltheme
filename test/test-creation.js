@@ -47,7 +47,7 @@ describe('drupaltheme generator', function () {
   it('creates expected files for SASS support', function (done) {
     var expected = [
       // add files you expect to exist here.
-      'sass/_base.scss',
+      'sass/_config.scss',
       'sass/editor.scss',
       'sass/style.scss'
     ];
