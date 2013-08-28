@@ -43,9 +43,31 @@ DrupalthemeGenerator.prototype.askFor = function askFor() {
       message: 'Describe your theme:'
     },
     {
+      name: 'drupalVersion',
+      message: 'Which Drupal version?',
+      type: 'list',
+      choices: [{
+        name: 'Drupal 7',
+        value: 'd7'
+      }, {
+        name: 'Drupal 8',
+        value: 'd8'
+      }]
+    },
+    {
       name: 'themeStyles',
-      message: 'Add Sass (S), or Compass (C) or NO (n) css preprocessor support',
-      default: 's/C/n'
+      message: 'Add Sass, or Compass or NO css preprocessor support',
+      type: 'list',
+      choices: [{
+        name: 'SCSS',
+        value: 's'
+      }, {
+        name: 'COMPASS',
+        value: 'c'
+      }, {
+        name: 'NO (plain CSS)',
+        value: 'n'
+      }]
     },
     {
       type: 'checkbox',
@@ -54,15 +76,15 @@ DrupalthemeGenerator.prototype.askFor = function askFor() {
       choices: [{
         name: 'Twitter Bootstrap for Sass/Compass',
         value: 'compassBootstrap',
-        checked: true
+        checked: false
       }, {
         name: 'Frondly - the (Drupal-)friendly front-end framework',
         value: 'frondly',
-        checked: true
+        checked: false
       }, {
         name: 'Modernizr',
         value: 'modernizr',
-        checked: true
+        checked: false
       }]
     }
   ];
@@ -72,13 +94,9 @@ DrupalthemeGenerator.prototype.askFor = function askFor() {
     var features = props.features;
 
     this.themeDesc = props.themeDesc;
-    this.styleSASS = (/s/i).test(props.themeStyles) ? true : false;
-    this.styleCOMPASS = (/c/i).test(props.themeStyles) ? true : false;
-    if ((/n/i).test(props.themeStyles)) {
-      this.styleSASS = false;
-      this.styleCOMPASS = false;
-    }
-
+    this.styleSASS = (props.themeStyles === 's') ? true : false;
+    this.styleCOMPASS = (props.themeStyles === 'c') ? true : false;
+    this.drupalVersion = props.drupalVersion;
     this.compassBootstrap = features.indexOf('compassBootstrap') !== -1;
     this.frondly = features.indexOf('frondly') !== -1;
     this.modernizr = features.indexOf('modernizr') !== -1;
@@ -120,7 +138,9 @@ DrupalthemeGenerator.prototype.themeScripts = function themeScripts() {
 
 DrupalthemeGenerator.prototype.themeInfo = function themeInfo() {
   var tn = this.themeName;
-  this.template('_theme.info', tn + '.info');
+  if (this.drupalVersion === 'd7') {
+    this.template('d7/_theme.info', tn + '.info');
+  }
 };
 
 DrupalthemeGenerator.prototype.themeImages = function themeImages() {

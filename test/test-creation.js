@@ -34,6 +34,7 @@ describe('drupaltheme generator', function () {
 
     helpers.mockPrompt(this.app, {
       'themeDesc': 'mock theme decription',
+      'drupalVersion': 'd7',
       'themeStyles': 'n',
       'features': []
     });
@@ -54,6 +55,7 @@ describe('drupaltheme generator', function () {
 
     helpers.mockPrompt(this.app, {
       'themeDesc': 'mock theme decription',
+      'drupalVersion': 'd7',
       'themeStyles': 's',
       'features': []
     });
@@ -73,6 +75,7 @@ describe('drupaltheme generator', function () {
 
     helpers.mockPrompt(this.app, {
       'themeDesc': 'mock theme decription',
+      'drupalVersion': 'd7',
       'themeStyles': 'c',
       'features': []
     });
