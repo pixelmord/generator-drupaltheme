@@ -107,7 +107,6 @@ DrupalthemeGenerator.prototype.app = function app() {
   this.mkdir('js');
   this.mkdir('css');
   this.mkdir('images');
-  this.mkdir('templates');
   if (this.styleSASS || this.styleCOMPASS || this.compassBootstrap || this.frondly) {
     this.mkdir('sass');
   }
@@ -137,6 +136,17 @@ DrupalthemeGenerator.prototype.themeInfo = function themeInfo() {
   // Drupal 7
   if (this.drupalVersion === 'd7') {
     this.template('d7/_theme.info', tn + '.info');
+  }
+  // Drupal 8
+
+};
+
+DrupalthemeGenerator.prototype.themeTemplates = function themeTemplates() {
+  var tn = this.themeName;
+  // Drupal 7
+  if (this.drupalVersion === 'd7') {
+    this.template('d7/_template.php', 'template.php');
+    this.directory('d7/templates', 'templates');
   }
   // Drupal 8
 
