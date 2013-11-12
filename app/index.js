@@ -49,6 +49,9 @@ DrupalthemeGenerator.prototype.askFor = function askFor() {
       choices: [{
         name: 'Drupal 7',
         value: 'd7'
+      }, {
+        name: 'Drupal 8',
+        value: 'd8'
       }]
     },
     {
