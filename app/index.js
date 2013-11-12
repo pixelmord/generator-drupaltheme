@@ -122,7 +122,6 @@ DrupalthemeGenerator.prototype.themeStyles = function themeStyles() {
   this.template('_editor.css', 'css/editor.css');
   if (this.styleCOMPASS || this.compassBootstrap || this.frondly) {
     this.template('_config.rb', 'config.rb');
-    this.template('_Gemfile', 'Gemfile');
   }
   if (this.styleSASS || this.styleCOMPASS || this.compassBootstrap || this.frondly) {
     this.template('__config.scss', 'sass/_config.scss');

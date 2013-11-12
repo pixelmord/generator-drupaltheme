@@ -69,7 +69,6 @@ describe('drupaltheme generator', function () {
   it('creates expected files for COMPASS support', function (done) {
     var expected = [
       // add files you expect to exist here.
-      'Gemfile',
       'config.rb'
     ];
 
