@@ -134,9 +134,12 @@ DrupalthemeGenerator.prototype.themeScripts = function themeScripts() {
 
 DrupalthemeGenerator.prototype.themeInfo = function themeInfo() {
   var tn = this.themeName;
+  // Drupal 7
   if (this.drupalVersion === 'd7') {
     this.template('d7/_theme.info', tn + '.info');
   }
+  // Drupal 8
+
 };
 
 DrupalthemeGenerator.prototype.themeImages = function themeImages() {
