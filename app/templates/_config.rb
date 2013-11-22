@@ -35,8 +35,8 @@ require 'susy'
 add_import_path "libraries/frondly/sass"
 <% } %>
 <% if (compassBootstrap) { %>
-# Add sass-bootstrap as import path to use components and mixins from there
-add_import_path "libraries/sass-bootstrap/lib"
+# Add bootstrap-sass as import path to use components and mixins from there
+add_import_path "libraries/bootstrap-sass/lib"
 <% } %>
 ##
 ## You probably don't need to edit anything below this.
