@@ -59,11 +59,7 @@ var Generator = module.exports = function Generator(args, options, config) {
     args: args
   });
 
-  // set destination path according to destination path + theme name
-  if (this.destpath != this.dirName) {
-    this.dirName = path.join(this.destpath, this.themeMachineName);
-    this.destinationRoot(this.dirName);
-  }
+
 
 };
 
@@ -86,9 +82,13 @@ Generator.prototype.askFor = function askFor() {
 
   this.prompt(prompts, function (props) {
     this.themeName = this.env.themeName = props.themeName;
-    this.themeMachineName = this.env.themeMachineName = _(_.slugify(this.themeName)).underscored();
+    this.themeMachineName = this.env.themeMachineName = _.underscored((_.slugify(this.themeName)));
     this.themeDesc = this.env.themeDesc = props.themeDesc;
-
+    // set destination path according to destination path + theme name
+    if (this.destpath != this.dirName) {
+      this.dirName = path.join(this.destpath, this.themeMachineName);
+      this.destinationRoot(this.dirName);
+    }
     cb();
   }.bind(this));
 };
