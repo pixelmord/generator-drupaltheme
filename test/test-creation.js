@@ -22,8 +22,8 @@ describe('drupaltheme generator', function () {
   it('creates expected files', function (done) {
     var expected = [
       // add files you expect to exist here.
-      ['bower.json', /"name": "temp"/],
-      ['package.json', /"name": "temp"/],
+      ['bower.json', /"name": "testing-name"/],
+      ['package.json', /"name": "testing-name"/],
       '.jshintrc',
       '.editorconfig',
       'temp.info',
@@ -33,6 +33,7 @@ describe('drupaltheme generator', function () {
     ];
 
     helpers.mockPrompt(this.app, {
+      'themeName': 'testing-name',
       'themeDesc': 'mock theme decription',
       'drupalVersion': 'd7',
       'themeStyles': 'n',
@@ -54,6 +55,7 @@ describe('drupaltheme generator', function () {
     ];
 
     helpers.mockPrompt(this.app, {
+      'themeName': 'testing-name',
       'themeDesc': 'mock theme decription',
       'drupalVersion': 'd7',
       'themeStyles': 's',
@@ -73,6 +75,7 @@ describe('drupaltheme generator', function () {
     ];
 
     helpers.mockPrompt(this.app, {
+      'themeName': 'testing-name',
       'themeDesc': 'mock theme decription',
       'drupalVersion': 'd7',
       'themeStyles': 'c',

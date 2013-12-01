@@ -7,13 +7,13 @@
  *   An array of variables to pass to the theme template.
  * @param $hook
  *   The name of the template being rendered. This is usually "html", but can
- *   also be "maintenance_page" since <%= themeName %>_preprocess_maintenance_page() calls
+ *   also be "maintenance_page" since <%= themeMachineName %>_preprocess_maintenance_page() calls
  *   this function to have consistent variables.
  */
-function <%= themeName %>_preprocess_html(&$variables, $hook) {
+function <%= themeMachineName %>_preprocess_html(&$variables, $hook) {
   // Add variables and paths needed for HTML5 and responsive support.
   $variables['base_path'] = base_path();
-  $variables['theme_path'] = drupal_get_path('theme', '<%= themeName %>');
+  $variables['theme_path'] = drupal_get_path('theme', '<%= themeMachineName %>');
 
   $variables['add_responsive_meta'] = TRUE;
 
@@ -33,7 +33,7 @@ function <%= themeName %>_preprocess_html(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("html" in this case.)
  */
-function <%= themeName %>_process_html(&$variables, $hook) {
+function <%= themeMachineName %>_process_html(&$variables, $hook) {
   // Flatten out html_attributes.
   $variables['html_attributes'] = drupal_attributes($variables['html_attributes_array']);
 }
@@ -46,7 +46,7 @@ function <%= themeName %>_process_html(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-function <%= themeName %>_preprocess_page(&$variables, $hook) {
+function <%= themeMachineName %>_preprocess_page(&$variables, $hook) {
   // add a variable for debugging,
   // like showing all region containers even if they have no content
   $variables['debug'] = FALSE;
@@ -61,7 +61,7 @@ function <%= themeName %>_preprocess_page(&$variables, $hook) {
  * @param $variables
  *   An array of variables to pass to the theme template.
  */
-function <%= themeName %>_process_page(&$variables) {
+function <%= themeMachineName %>_process_page(&$variables) {
 
   // Since the title and the shortcut link are both block level elements,
   // positioning them next to each other is much simpler with a wrapper div.
@@ -88,7 +88,7 @@ function <%= themeName %>_process_page(&$variables) {
  * @param $hook
  *   The name of the template being rendered ("node" in this case.)
  */
-function <%= themeName %>_preprocess_node(&$variables, $hook) {
+function <%= themeMachineName %>_preprocess_node(&$variables, $hook) {
   // Add a suggestion based on view_mode.
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['view_mode'];
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__' . $variables['view_mode'];
@@ -117,7 +117,7 @@ function <%= themeName %>_preprocess_node(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("comment" in this case.)
  */
-function <%= themeName %>_preprocess_comment(&$variables, $hook) {
+function <%= themeMachineName %>_preprocess_comment(&$variables, $hook) {
   // If comment subjects are disabled, don't display them.
   if (variable_get('comment_subject_field_' . $variables['node']->type, 1) == 0) {
     $variables['title'] = '';
@@ -147,7 +147,7 @@ function <%= themeName %>_preprocess_comment(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("block" in this case.)
  */
-function <%= themeName %>_preprocess_taxonomy_term(&$variables) {
+function <%= themeMachineName %>_preprocess_taxonomy_term(&$variables) {
   // Add a suggestion based on view_mode.
   $variables['theme_hook_suggestions'][] = 'term__' . $variables['view_mode'];
   $variables['theme_hook_suggestions'][] = 'term__' . $variables['vocabulary_machine_name'] . '__' . $variables['view_mode'];
@@ -167,7 +167,7 @@ function <%= themeName %>_preprocess_taxonomy_term(&$variables) {
  * @param $hook
  *   The name of the template being rendered ("block" in this case.)
  */
-function <%= themeName %>_preprocess_block(&$variables, $hook) {
+function <%= themeMachineName %>_preprocess_block(&$variables, $hook) {
 
   $variables['classes_array'][] = $variables['block_zebra'];
 
@@ -273,7 +273,7 @@ function <%= themeName %>_preprocess_block(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("block" in this case.)
  */
-function <%= themeName %>_process_block(&$variables, $hook) {
+function <%= themeMachineName %>_process_block(&$variables, $hook) {
   // Drupal 7 should use a $title variable instead of $block->subject.
   $variables['title'] = $variables['block']->subject;
 }
@@ -284,7 +284,7 @@ function <%= themeName %>_process_block(&$variables, $hook) {
  * @param $variables
  *   An array of variables to pass to the theme template.
  */
-function <%= themeName %>_preprocess_panels_pane(&$variables) {
+function <%= themeMachineName %>_preprocess_panels_pane(&$variables) {
   $subtype = $variables['pane']->subtype;
   $layout = $variables['display']->layout;
   $variables['theme_hook_suggestions'][] = 'panels_pane__' . $layout;
@@ -295,7 +295,7 @@ function <%= themeName %>_preprocess_panels_pane(&$variables) {
 /**
  * Implements hook_css_alter().
  */
-function <%= themeName %>_css_alter(&$css) {
+function <%= themeMachineName %>_css_alter(&$css) {
 
   // Remove Drupal default stylesheets
   $exclude = array(
