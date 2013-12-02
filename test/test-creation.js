@@ -7,14 +7,17 @@ var helpers = require('yeoman-generator').test;
 
 describe('drupaltheme generator', function () {
   beforeEach(function (done) {
+    var deps = [
+      '../../app',
+      '../../common',
+      '../../default'
+    ];
     helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
       if (err) {
         return done(err);
       }
 
-      this.app = helpers.createGenerator('drupaltheme:app', [
-        '../../app'
-      ]);
+      this.app = helpers.createGenerator('drupaltheme:app', deps);
       done();
     }.bind(this));
   });
