@@ -1,0 +1,5 @@
+{
+  "name": "<%= packageInfo.name %>",
+  "version": "<%= packageInfo.version %>",
+  "dependencies": {}
+}

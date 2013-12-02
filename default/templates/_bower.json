@@ -1,8 +1,9 @@
 {
   "name": "<%= themeName %>",
   "version": "0.0.0",
-  "dependencies": {<% if (compassBootstrap) { %>
-    "sass-bootstrap": "~2.3.0"<% } %><% if (frondly) { %>,
+  "dependencies": {
+    "html5shiv": "~3.6.2"<% if (compassBootstrap) { %>,
+    "bootstrap-sass": "~3.0.2"<% } %><% if (frondly) { %>,
     "frondly": "https://github.com/pixelmord/frondly.git"<% } %><% if (modernizr) { %>,
     "modernizr": "~2.6.2"<% } %>
   },

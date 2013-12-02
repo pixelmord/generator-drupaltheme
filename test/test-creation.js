@@ -7,14 +7,17 @@ var helpers = require('yeoman-generator').test;
 
 describe('drupaltheme generator', function () {
   beforeEach(function (done) {
+    var deps = [
+      '../../app',
+      '../../common',
+      '../../default'
+    ];
     helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
       if (err) {
         return done(err);
       }
 
-      this.app = helpers.createGenerator('drupaltheme:app', [
-        '../../app'
-      ]);
+      this.app = helpers.createGenerator('drupaltheme:app', deps);
       done();
     }.bind(this));
   });
@@ -22,8 +25,8 @@ describe('drupaltheme generator', function () {
   it('creates expected files', function (done) {
     var expected = [
       // add files you expect to exist here.
-      ['bower.json', /"name": "temp"/],
-      ['package.json', /"name": "temp"/],
+      ['bower.json', /"name": "testing-name"/],
+      ['package.json', /"name": "testing-name"/],
       '.jshintrc',
       '.editorconfig',
       'temp.info',
@@ -33,6 +36,7 @@ describe('drupaltheme generator', function () {
     ];
 
     helpers.mockPrompt(this.app, {
+      'themeName': 'testing-name',
       'themeDesc': 'mock theme decription',
       'drupalVersion': 'd7',
       'themeStyles': 'n',
@@ -54,6 +58,7 @@ describe('drupaltheme generator', function () {
     ];
 
     helpers.mockPrompt(this.app, {
+      'themeName': 'testing-name',
       'themeDesc': 'mock theme decription',
       'drupalVersion': 'd7',
       'themeStyles': 's',
@@ -73,6 +78,7 @@ describe('drupaltheme generator', function () {
     ];
 
     helpers.mockPrompt(this.app, {
+      'themeName': 'testing-name',
       'themeDesc': 'mock theme decription',
       'drupalVersion': 'd7',
       'themeStyles': 'c',
