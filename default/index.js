@@ -36,10 +36,16 @@ DrupalthemeGenerator.prototype.askFor = function askFor() {
       name: 'drupalVersion',
       message: 'Which Drupal version?',
       type: 'list',
-      choices: [{
-        name: 'Drupal 7',
-        value: 'd7'
-      }]
+      choices: [
+        {
+          name: 'Drupal 7',
+          value: 'd7'
+        },
+        {
+          name: 'Drupal 8',
+          value: 'd8'
+        }
+      ]
     },
     {
       name: 'themeStyles',
