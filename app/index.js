@@ -4,6 +4,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var _ = require('lodash');
 _.str = require('underscore.string');
+var drupalLogo = require('../common/drupal-logo');
 
 _.mixin(_.str.exports());
 
@@ -41,6 +42,7 @@ var Generator = module.exports = function Generator(args, options, config) {
 
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
 
+  console.log(drupalLogo.logo);
 
   this.hookFor('drupaltheme:common', {
     args: args
