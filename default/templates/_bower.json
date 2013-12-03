@@ -4,8 +4,7 @@
   "dependencies": {
     "html5shiv": "~3.6.2"<% if (compassBootstrap) { %>,
     "bootstrap-sass": "~3.0.2"<% } %><% if (frondly) { %>,
-    "frondly": "https://github.com/pixelmord/frondly.git"<% } %><% if (modernizr) { %>,
-    "modernizr": "~2.6.2"<% } %>
+    "frondly": "https://github.com/pixelmord/frondly.git"<% } %>
   },
   "devDependencies": {}
 }
