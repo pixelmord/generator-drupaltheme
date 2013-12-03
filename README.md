@@ -17,6 +17,28 @@ A generator for Yeoman.
 - choice of CSS, SCSS or COMPASS scaffolding
 - HTML5 templates and preprocessing
 
+### NEW: drush integration
+
+There is currently an experimental drush integration through a drush plugin.
+See the sandbox project on drupal.org:
+[drush themegenerator](http://drupal.org/sandbox/hydra/2143001)
+
+It currently provides a
+- drush command (drush gt) to
+  - pass Drupal environment variables to yeoman
+  - pick up yo generator configuration from (base)themes
+  - pick up yo generator configuration from ~/.drush_themegenerator/starterkits folder
+
+A sample yo generator configuration can be found here:
+[gt_blueprints](https://github.com/wunderkraut/gt_blueprints)
+
+```bash
+    $ mkdir ~/.drush_themegenerator/
+    $ cd ~/.drush_themegenerator/
+    $ git clone https://github.com/wunderkraut/gt_blueprints starterkits
+```
+
+
 ## Roadmap
 
 ### Common
@@ -37,14 +59,5 @@ A generator for Yeoman.
 ### Drupal 8
 - a choice for Drupal 8 flavor
 
-### individual template support
-- pick up app and template configuration in user homedir
-- select by base theme context
-
-### drush integration
-- drush command to
-  - pass Drupal environment variables to yeoman
-  - pick up template configuration from (base)themes
-
 ## License
-[MIT License](http://en.wikipedia.org/wiki/MIT_License)
+[GPL License](http://www.gnu.org/licenses/gpl)
