@@ -74,10 +74,6 @@ DrupalthemeGenerator.prototype.askFor = function askFor() {
         name: 'Frondly - the (Drupal-)friendly front-end framework',
         value: 'frondly',
         checked: false
-      }, {
-        name: 'Modernizr',
-        value: 'modernizr',
-        checked: false
       }]
     }
   ];
@@ -90,7 +86,6 @@ DrupalthemeGenerator.prototype.askFor = function askFor() {
     this.drupalVersion = props.drupalVersion;
     this.compassBootstrap = features.indexOf('compassBootstrap') !== -1;
     this.frondly = features.indexOf('frondly') !== -1;
-    this.modernizr = features.indexOf('modernizr') !== -1;
 
     cb();
   }.bind(this));
