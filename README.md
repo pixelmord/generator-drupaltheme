@@ -49,7 +49,7 @@ A sample yo generator configuration can be found here:
   - uglyfying
   - optimization
   - live reloading
-- Drupal logo in generator ;)
+
 
 ### Drupal 7
 - more preprocessing with (sane) defaults
