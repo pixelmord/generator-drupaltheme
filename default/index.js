@@ -61,7 +61,7 @@ DrupalthemeGenerator.prototype.askFor = function askFor() {
       name: 'features',
       message: 'What more would you like?',
       choices: [{
-        name: 'Twitter Bootstrap for Sass/Compass',
+        name: 'Bootstrap for Sass/Compass',
         value: 'compassBootstrap',
         checked: false
       }, {
