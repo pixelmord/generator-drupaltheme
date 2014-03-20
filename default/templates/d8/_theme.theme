@@ -1,0 +1,7 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the <%= themeMachineName %> theme.
+ */
+use Drupal\Core\Template\RenderWrapper;

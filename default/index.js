@@ -125,17 +125,22 @@ DrupalthemeGenerator.prototype.themeInfo = function themeInfo() {
     this.template('d7/_theme.info', tn + '.info');
   }
   // Drupal 8
-
+  if (this.drupalVersion === 'd8') {
+    this.template('d8/_theme.info.yml', tn + '.info.yml');
+  }
 };
 
 DrupalthemeGenerator.prototype.themeTemplates = function themeTemplates() {
+  var tn = this.themeMachineName;
   // Drupal 7
   if (this.drupalVersion === 'd7') {
     this.template('d7/_template.php', 'template.php');
     this.directory('d7/templates', 'templates');
   }
   // Drupal 8
-
+  if (this.drupalVersion === 'd8') {
+    this.template('d8/_theme.theme', tn + '.theme');
+  }
 };
 
 DrupalthemeGenerator.prototype.themeImages = function themeImages() {
