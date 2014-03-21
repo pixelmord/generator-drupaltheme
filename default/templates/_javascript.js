@@ -1,10 +1,12 @@
 (function ($) {
-
+  'use strict';
   Drupal.behaviors.<%= themeMachineName %> = {
     attach: function (context, settings) {
-      $('body', context).click(function () {
-        console.log('Hello world!')
-      });
+      // This is an example for the use of a behaviour
+      // @see: https://drupal.org/node/756722
+      // $('body', context).click(function () {
+      //   console.log('Hello world!')
+      // });
     }
   };
 
