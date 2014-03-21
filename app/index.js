@@ -75,6 +75,7 @@ Generator.prototype.askFor = function askFor() {
       name: 'themeName',
       message: 'Name your theme:',
       default: this.themeName
+
     },
     {
       name: 'themeDesc',

@@ -1,0 +1,11 @@
+name: <%= themeName %>
+type: theme
+description: <%= themeDesc %>
+version: VERSION
+core: 8.x
+stylesheets:
+  all:
+    - css/editor.css
+    - css/style.css
+# stylesheets-remove:
+#  - normalize.css
