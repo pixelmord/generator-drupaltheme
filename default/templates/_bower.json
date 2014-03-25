@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "dependencies": {
     "html5shiv": "~3.6.2"<% if (compassBootstrap) { %>,
-    "bootstrap-sass": "~3.0.2"<% } %><% if (frondly) { %>,
+    "bootstrap-sass-official": "~3.1.1"<% } %><% if (frondly) { %>,
     "frondly": "https://github.com/pixelmord/frondly.git"<% } %>
   },
   "devDependencies": {}
